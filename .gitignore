@@ -1,4 +1,17 @@
+# 의존성 라이브러리 → npm install / yarn install 로 다시 설치 가능
 node_modules/
+
+# 빌드 결과물 → 소스코드로부터 다시 생성 가능 (dist, build)
 dist/
 build/
+
+# 환경 변수 파일 → API 키, 비밀번호 등 민감정보 보호
 .env
+.env.*.local
+
+# MacOS에서 자동으로 생기는 파일
+.DS_Store
+
+# 로그 파일 → 에러/디버그 기록 (공유 불필요)
+npm-debug.log*
+yarn-*.log*
