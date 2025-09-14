@@ -9,6 +9,7 @@ export default function App() {
     <>
       <input type="button" value="-" />
       <input type="button" value="0" />
+      <input></input>
       <input type="button" value="+" />
       <span>{count}</span>
     </>
