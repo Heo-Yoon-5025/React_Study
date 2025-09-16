@@ -5,26 +5,28 @@ import "./App.css";
 import { createStore } from "redux";
 import { Provider, useSelector, useDispatch, connect } from "react-redux";
 
-function reducer(cuurentState, action) {
+function reducer(currentState, action) {
   if (cuurentState === undefined) {
     return {
       number: 1,
     };
   }
-  const newState = { ...cuurentState };
+  const newState = { ...currentState };
+  if (action.type == "PLUS") {
+    newState.number++;
+  }
   return newState;
 }
 
-const stroe = createStore(reducer);
+const store = createStore(reducer);
 
 export default function App() {
-  const [number, setNumber] = useState(1);
   return (
     <>
       <div id="container">
-        <h1>Root : {number}</h1>
+        <h1>Root</h1>
         <div id="grid">
-          <Provider store={stroe}>
+          <Provider store={store}>
             <Left1></Left1>
             <Right1></Right1>
           </Provider>
@@ -75,10 +77,18 @@ function Right2(props) {
   );
 }
 function Right3(props) {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1>Right3</h1>
-      <input type="button" value="+" onClick={() => {}} />
+      <input
+        type="button"
+        value="+"
+        onClick={() => {
+          dispatch({ type: "PLUS" });
+        }}
+      />
     </div>
   );
 }
