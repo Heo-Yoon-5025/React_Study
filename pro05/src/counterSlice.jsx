@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // 1. Slice 생성: 전역 상태와 Reducer 정의
 const counterSlice = createSlice({
