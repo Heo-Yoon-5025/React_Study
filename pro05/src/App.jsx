@@ -1,10 +1,5 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { createStore } from "redux";
 import { Provider, useDispatch, useSelector } from "react-redux";
-import { configureStore, createSlice } from "@reduxjs/toolkit";
 import store from "./store";
 import { up } from "./counterSlice";
 
